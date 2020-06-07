@@ -85,3 +85,9 @@ class ContagionUpdateDeleteView(APIView):
         queryset = get_object_or_404(Contagion, id=id)
         queryset.delete()
         return Response(status=HTTP_204_NO_CONTENT)
+
+
+class HelpViewSet(ModelViewSet):
+    queryset = Help.objects.all()
+    serializer_class = HelpSerializer
+    

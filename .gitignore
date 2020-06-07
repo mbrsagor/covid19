@@ -1,1 +1,9 @@
-.idea__pycache__*.pycdb.sqlite3.vscodemediavenv
+.idea
+__pycache__
+*.pyc
+db.sqlite3
+.vscode
+media
+venv
+media
+static

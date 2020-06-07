@@ -74,3 +74,12 @@ class Contagion(BaseEntity):
 
     def __str__(self):
         return self.disease.disease_name
+
+
+class Help(BaseEntity):
+    title = models.CharField(max_length= 70)
+    help_text = models.CharField(max_length= 110)
+    help_image = models.ImageField(upload_to='help//%y/%m', blank=True, null=True)
+
+    def __str__(self):
+        return self.title

@@ -1,1 +1,52 @@
-from .models import Country, Profile, Disease, Contagionfrom rest_framework.serializers import ModelSerializerclass CountrySerializer(ModelSerializer):    class Meta:        model = Country        fields = [            'id', 'name', 'parent', 'order',            'flag', 'is_active', 'created_at', 'updated_at'        ]class ProfileSerializer(ModelSerializer):    class Meta:        model = Profile        fields = [            'id', 'user', 'email', 'photo',            'date_of_birth', 'gender', 'mobile', 'address', 'bio',            'created_at', 'updated_at'        ]class DiseaseSerializer(ModelSerializer):    class Meta:        model = Disease        fields = [            'id', 'disease_name', 'disease_image',            'created_at', 'updated_at'        ]class ContagionSerializer(ModelSerializer):    class Meta:        model = Contagion        fields = [            'id', 'disease', 'country', 'reporter', 'daily_test',            'daily_effected', 'daily_dies', 'daily_recovery',            'created_at', 'updated_at'        ]        read_only_field = ['reporter']
+from .models import Country, Profile, Disease, Contagion, Help
+from rest_framework.serializers import ModelSerializer
+
+
+class CountrySerializer(ModelSerializer):
+    class Meta:
+        model = Country
+        fields = [
+            'id', 'name', 'parent', 'order',
+            'flag', 'is_active', 'created_at', 'updated_at'
+        ]
+
+
+class ProfileSerializer(ModelSerializer):
+    class Meta:
+        model = Profile
+        fields = [
+            'id', 'user', 'email', 'photo',
+            'date_of_birth', 'gender', 'mobile', 'address', 'bio',
+            'created_at', 'updated_at'
+        ]
+
+
+class DiseaseSerializer(ModelSerializer):
+    class Meta:
+        model = Disease
+        fields = [
+            'id', 'disease_name', 'disease_image',
+            'created_at', 'updated_at'
+        ]
+
+
+class ContagionSerializer(ModelSerializer):
+    class Meta:
+        model = Contagion
+        fields = [
+            'id', 'disease', 'country', 'reporter', 'daily_test',
+            'daily_effected', 'daily_dies', 'daily_recovery',
+            'created_at', 'updated_at'
+        ]
+
+        read_only_field = ['reporter']
+
+
+
+class HelpSerializer(ModelSerializer):
+    class Meta:
+        model = Help
+        fields = [
+            'id', 'title', 'help_text',
+            'help_image', 'created_at', 'updated_at'
+        ]
