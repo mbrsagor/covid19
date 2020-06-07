@@ -81,5 +81,8 @@ class Help(BaseEntity):
     help_text = models.CharField(max_length= 110)
     help_image = models.ImageField(upload_to='help//%y/%m', blank=True, null=True)
 
+    class Meta:
+        ordering = ['-id']
+
     def __str__(self):
         return self.title
