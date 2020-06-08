@@ -1,4 +1,4 @@
-from .models import Country, Profile, Disease, Contagion, Help
+from .models import *
 from rest_framework.serializers import ModelSerializer
 
 
@@ -42,11 +42,18 @@ class ContagionSerializer(ModelSerializer):
         read_only_field = ['reporter']
 
 
-
 class HelpSerializer(ModelSerializer):
     class Meta:
         model = Help
         fields = [
             'id', 'title', 'help_text',
             'help_image', 'created_at', 'updated_at'
+        ]
+
+
+class HospitalSerializer(ModelSerializer):
+    class Meta:
+        model = Hospital
+        fields = [
+            'id', 'hospital_name', 'location'
         ]

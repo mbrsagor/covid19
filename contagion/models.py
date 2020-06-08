@@ -77,8 +77,8 @@ class Contagion(BaseEntity):
 
 
 class Help(BaseEntity):
-    title = models.CharField(max_length= 70)
-    help_text = models.CharField(max_length= 110)
+    title = models.CharField(max_length=70)
+    help_text = models.CharField(max_length=110)
     help_image = models.ImageField(upload_to='help//%y/%m', blank=True, null=True)
 
     class Meta:
@@ -86,3 +86,11 @@ class Help(BaseEntity):
 
     def __str__(self):
         return self.title
+
+
+class Hospital(BaseEntity):
+    hospital_name = models.CharField(max_length=120)
+    location = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.hospital_name

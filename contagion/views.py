@@ -90,4 +90,8 @@ class ContagionUpdateDeleteView(APIView):
 class HelpViewSet(ModelViewSet):
     queryset = Help.objects.all()
     serializer_class = HelpSerializer
-    
+
+
+class HospitalViewSet(ModelViewSet):
+    queryset = Hospital.objects.all()
+    serializer_class = HospitalSerializer

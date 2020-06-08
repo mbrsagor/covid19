@@ -5,6 +5,7 @@ from .views import *
 router = routers.DefaultRouter()
 router.register('disease', DiseaseViewSet)
 router.register('help', HelpViewSet)
+router.register('hospital', HospitalViewSet)
 
 urlpatterns = [
     path('', CountryApiView.as_view(), name='country'),
