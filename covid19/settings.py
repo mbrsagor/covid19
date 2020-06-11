@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework.authtoken',
     'rest_auth',
+    'rest_registration',
 
 ]
 
@@ -140,6 +141,18 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
+
+# Rest API
+REST_REGISTRATION = {
+    'REGISTER_VERIFICATION_ENABLED': False,
+    'RESET_PASSWORD_VERIFICATION_ENABLED': False,
+    'REGISTER_EMAIL_VERIFICATION_ENABLED': False,
+    'REGISTER_VERIFICATION_URL': 'https://frontend-host/verify-user/',
+    'RESET_PASSWORD_VERIFICATION_URL': 'https://frontend-host/reset-password/',
+    'REGISTER_EMAIL_VERIFICATION_URL': 'https://frontend-host/verify-email/',
+
+    'VERIFICATION_FROM_EMAIL': 'mbrsagor@gmail.com',
+}
 
 CORS_ORIGIN_ALLOW_ALL = False
 
