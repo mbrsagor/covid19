@@ -1,5 +1,5 @@
 # Covid-19 
-##### Basically the project for the COVID-19 situation helping peoples who will be suffering the current situation.
+##### Basically the project for the COVID-19 situation helping peoples who will suffering the current situation.
 ## Setup
 
 ### Dependancies
@@ -13,13 +13,6 @@ It's also possible to develop on a Windows machine, but I have not documented th
 If you've developed django/react apps on Windows, you should have little problem getting
 up and running.
 
-### Installing Geospatial libraries
-
-On Mac
-```
-$ brew install gdal
-$ brew install libgeoip
-```
 
 On Debian/Ubuntu Linux
 ```
