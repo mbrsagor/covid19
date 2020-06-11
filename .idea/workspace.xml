@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0cd60b1d-e405-459d-a00a-bb8df1bb4059" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/contagion/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/contagion/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid19/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/covid19/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/covid19/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/covid19/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,20 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/covid19/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="148" column="1" lean-forward="true" selection-start-line="148" selection-start-column="1" selection-end-line="148" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/covid19/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="25" column="18" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="18" />
+            <state relative-caret-position="266">
+              <caret line="149" column="67" lean-forward="true" selection-start-line="149" selection-start-column="55" selection-end-line="149" selection-end-column="67" />
             </state>
           </provider>
         </entry>
@@ -436,17 +424,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/covid19/settings.py">
+    <entry file="file://$PROJECT_DIR$/covid19/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="148" column="1" lean-forward="true" selection-start-line="148" selection-start-column="1" selection-end-line="148" selection-end-column="1" />
+        <state relative-caret-position="291">
+          <caret line="25" column="48" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/covid19/urls.py">
+    <entry file="file://$PROJECT_DIR$/covid19/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="25" column="18" selection-start-line="25" selection-start-column="10" selection-end-line="25" selection-end-column="18" />
+        <state relative-caret-position="266">
+          <caret line="149" column="67" lean-forward="true" selection-start-line="149" selection-start-column="55" selection-end-line="149" selection-end-column="67" />
         </state>
       </provider>
     </entry>
