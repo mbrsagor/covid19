@@ -27,7 +27,7 @@ First after installation mysql you may the command: example
 mysql -u root -p1234
 
 ```
-create database "newspaper";
+create database "covid19";
 ```
 
 ### Setup Django Server (Mac)
