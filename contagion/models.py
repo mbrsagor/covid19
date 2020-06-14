@@ -32,7 +32,7 @@ class Country(BaseEntity):
 
 
 class Profile(BaseEntity):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="user_profile")
     email = models.EmailField()
     photo = models.ImageField(upload_to='profile/%Y/%m/', null=True)
     date_of_birth = models.DateField(verbose_name="Birth Date", null=True)

@@ -1,5 +1,6 @@
 from .models import *
 from rest_framework.serializers import ModelSerializer
+from django.contrib.auth.models import User
 
 
 class CountrySerializer(ModelSerializer):
@@ -11,6 +12,14 @@ class CountrySerializer(ModelSerializer):
         ]
 
 
+class UserSerializer(ModelSerializer):
+    class Meta:
+        model = User
+        fields = (
+            '__all__'
+        )
+
+
 class ProfileSerializer(ModelSerializer):
     class Meta:
         model = Profile
@@ -19,6 +28,11 @@ class ProfileSerializer(ModelSerializer):
             'date_of_birth', 'gender', 'mobile', 'address', 'bio',
             'created_at', 'updated_at'
         ]
+
+    def to_representation(self, instance):
+        response = super().to_representation(inspect)
+        response['user'] = UserSerializer(inspect.user).data
+        return response
 
 
 class DiseaseSerializer(ModelSerializer):
