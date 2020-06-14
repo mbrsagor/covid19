@@ -36,12 +36,12 @@ install [Homebrew](http://brew.sh), then…
 ```
 brew install python3
 ```
-Assuming you've cloned the repository, open Terminal and `cd ~/your/path/to/newspaper`.
+Assuming you've cloned the repository, open Terminal and `cd ~/your/path/to/coivd19`.
 
 Create a python virtual environment:
 
 ```bash/zsh
-pyvenv-3.6.9 env
+virtualenv venv --python=python3.6
 ```
 
 Activate it:
