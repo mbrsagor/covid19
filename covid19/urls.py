@@ -23,7 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('contagion.urls')),
     path('rest-auth/', include('rest_auth.urls')),
-    path('accounts/', include('rest_registration.api.urls')),
+    path('api/accounts/', include('rest_registration.api.urls')),
 
 ]
 
