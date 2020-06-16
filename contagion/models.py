@@ -68,6 +68,8 @@ class Contagion(BaseEntity):
     daily_effected = models.IntegerField(default=0)
     daily_dies = models.IntegerField(default=0)
     daily_recovery = models.IntegerField(default=0)
+    is_publish = models.BooleanField(blank=True, null=True, default=True)
+    date_time = models.DateField(blank=True, null=True)
 
     class Meta:
         ordering = ['-id']

@@ -50,7 +50,7 @@ class ContagionSerializer(ModelSerializer):
         fields = [
             'id', 'disease', 'country', 'reporter', 'daily_test',
             'daily_effected', 'daily_dies', 'daily_recovery',
-            'created_at', 'updated_at'
+            'is_publish', 'date_time', 'created_at', 'updated_at'
         ]
 
         read_only_field = ['reporter']
