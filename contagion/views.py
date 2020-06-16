@@ -17,7 +17,7 @@ class StandardResultsSetPagination(PageNumberPagination):
     max_page_size = 10
 
 
-class CountryApiView(APIView):
+class LocationApiView(APIView):
 
     def get(self, request):
         queryset = Location.objects.all()
@@ -34,7 +34,7 @@ class CountryApiView(APIView):
             return Response(serializer.errors, HTTP_400_BAD_REQUEST)
 
 
-class CountryUpdateDeleteView(APIView):
+class LocationUpdateDeleteView(APIView):
 
     def put(self, request, id):
         queryset = get_object_or_404(Location, id=id)

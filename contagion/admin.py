@@ -6,16 +6,15 @@ from .models import *
 class LocationAdmin(admin.ModelAdmin):
     list_display = (
         'name', 'parent', 'is_active',
-        'order', 'created_at', 'updated_at'
+        'created_at', 'updated_at'
     )
 
     list_display_links = ['name']
 
     list_filter = [
-        'name', 'parent', 'order'
+        'name', 'parent'
     ]
 
-    list_editable = ['order']
     list_per_page = 6
 
 
