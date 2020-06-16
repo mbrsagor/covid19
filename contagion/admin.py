@@ -3,7 +3,7 @@ from .models import *
 
 
 # Register your models here.
-class CountryAdmin(admin.ModelAdmin):
+class LocationAdmin(admin.ModelAdmin):
     list_display = (
         'name', 'parent', 'is_active',
         'order', 'created_at', 'updated_at'
@@ -19,7 +19,7 @@ class CountryAdmin(admin.ModelAdmin):
     list_per_page = 6
 
 
-admin.site.register(Country, CountryAdmin)
+admin.site.register(Location, LocationAdmin)
 
 
 class DiseaseAdmin(admin.ModelAdmin):

@@ -20,12 +20,12 @@ class StandardResultsSetPagination(PageNumberPagination):
 class CountryApiView(APIView):
 
     def get(self, request):
-        queryset = Country.objects.all()
-        serializer = CountrySerializer(queryset, many=True)
+        queryset = Location.objects.all()
+        serializer = LocationSerializer(queryset, many=True)
         return Response(serializer.data)
 
     def post(self, request):
-        serializer = CountrySerializer(data=request.data)
+        serializer = LocationSerializer(data=request.data)
 
         if serializer.is_valid():
             serializer.save()
@@ -37,8 +37,8 @@ class CountryApiView(APIView):
 class CountryUpdateDeleteView(APIView):
 
     def put(self, request, id):
-        queryset = get_object_or_404(Country, id=id)
-        serializer = CountrySerializer(queryset, data=request.data)
+        queryset = get_object_or_404(Location, id=id)
+        serializer = LocationSerializer(queryset, data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=HTTP_201_CREATED)
@@ -46,7 +46,7 @@ class CountryUpdateDeleteView(APIView):
             return Response(serializer.errors, status=HTTP_400_BAD_REQUEST)
 
     def delete(self, request, id):
-        queryset = get_object_or_404(Country, id=id)
+        queryset = get_object_or_404(Location, id=id)
         queryset.delete()
         return Response(status=HTTP_204_NO_CONTENT)
 

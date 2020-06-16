@@ -3,9 +3,9 @@ from rest_framework.serializers import ModelSerializer
 from django.contrib.auth.models import User
 
 
-class CountrySerializer(ModelSerializer):
+class LocationSerializer(ModelSerializer):
     class Meta:
-        model = Country
+        model = Location
         fields = [
             'id', 'name', 'parent', 'order',
             'flag', 'is_active', 'created_at', 'updated_at'

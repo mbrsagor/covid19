@@ -11,7 +11,7 @@ class BaseEntity(models.Model):
         abstract = True
 
 
-class Country(BaseEntity):
+class Location(BaseEntity):
     name = models.CharField(max_length=95)
     flag = models.ImageField(upload_to='flag/%y/%m', null=True, blank=True)
     parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, default=None)
@@ -25,10 +25,10 @@ class Country(BaseEntity):
         return self.name
 
     def get_children(self):
-        return Country.objects.filter(parent=self)
+        return Location.objects.filter(parent=self)
 
     def children_count(self):
-        return Country.objects.filter(parent=self).count()
+        return Location.objects.filter(parent=self).count()
 
 
 class Profile(BaseEntity):
@@ -62,7 +62,7 @@ class Disease(BaseEntity):
 
 class Contagion(BaseEntity):
     disease = models.ForeignKey(Disease, on_delete=models.SET_NULL, null=True, related_name='ContagionName')
-    country = models.ForeignKey(Country, on_delete=models.CASCADE, null=True, related_name='CountryName')
+    country = models.ForeignKey(Location, on_delete=models.CASCADE, null=True, related_name='CountryName')
     reporter = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='author')
     daily_test = models.IntegerField(default=0)
     daily_effected = models.IntegerField(default=0)
