@@ -5,15 +5,13 @@ from .models import *
 # Register your models here.
 class LocationAdmin(admin.ModelAdmin):
     list_display = (
-        'name', 'parent', 'is_active',
+        'name', 'is_active',
         'created_at', 'updated_at'
     )
 
     list_display_links = ['name']
 
-    list_filter = [
-        'name', 'parent'
-    ]
+    list_filter = ['name']
 
     list_per_page = 6
 

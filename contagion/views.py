@@ -108,7 +108,6 @@ class HospitalViewSet(ModelViewSet):
 
 
 class ProfileApiView(APIView):
-
     permission_classes = [IsAuthenticated]
 
     def get(self, request):

@@ -14,7 +14,7 @@ class BaseEntity(models.Model):
 class Location(BaseEntity):
     name = models.CharField(max_length=95)
     flag = models.ImageField(upload_to='flag/%y/%m', null=True, blank=True)
-    parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, default=None)
+    # parent = models.ForeignKey('self', on_delete=models.CASCADE, blank=True, null=True, default=None)
     is_active = models.BooleanField(default=False)
 
     class Meta:
