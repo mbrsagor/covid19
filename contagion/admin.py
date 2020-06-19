@@ -44,3 +44,17 @@ class ContagionAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Contagion, ContagionAdmin)
+
+
+class HelpAdmin(admin.ModelAdmin):
+    list_display = (
+        'id', 'title', 'help_text'
+    )
+    list_filter = (
+        'id', 'title', 'help_text'
+    )
+    list_editable = ['title', 'help_text']
+    list_per_page = 6
+
+
+admin.site.register(Help, HelpAdmin)
