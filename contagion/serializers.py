@@ -69,5 +69,5 @@ class HospitalSerializer(ModelSerializer):
     class Meta:
         model = Hospital
         fields = [
-            'id', 'hospital_name', 'location'
+            'id', 'hospital_name', 'location', 'hospital_type'
         ]

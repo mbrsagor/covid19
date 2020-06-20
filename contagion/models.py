@@ -92,6 +92,8 @@ class Help(BaseEntity):
 class Hospital(BaseEntity):
     hospital_name = models.CharField(max_length=120)
     location = models.CharField(max_length=200)
+    hospital_type = models.CharField(choices=HospitalEnum.choices(), default=HospitalEnum.Governmental.value,
+                                     max_length=20)
 
     def __str__(self):
         return self.hospital_name

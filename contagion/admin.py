@@ -58,3 +58,19 @@ class HelpAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Help, HelpAdmin)
+
+
+class HospitalAdmin(admin.ModelAdmin):
+    list_display = (
+        'id', 'hospital_name', 'location', 'hospital_type'
+    )
+
+    list_filter = (
+        'hospital_name', 'location', 'hospital_type'
+    )
+
+    list_editable = ['location', 'hospital_type']
+    list_per_page = 6
+
+
+admin.site.register(Hospital, HospitalAdmin)
