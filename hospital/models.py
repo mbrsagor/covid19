@@ -8,7 +8,7 @@ from contagion.models import BaseEntity, Disease
 class Experience(BaseEntity):
     organization_name = models.CharField(max_length=120)
     designation = models.CharField(max_length=70)
-    designation_year = models.CharField(max_length=70)
+    job_year = models.CharField(max_length=70)
 
     def __str__(self):
         return self.organization_name
@@ -39,10 +39,26 @@ class Doctor(BaseEntity):
     education = models.TextField()
     visit_fee = models.IntegerField(default=0)
     designation = models.CharField(max_length=70)
+    profile_photo = models.ImageField(upload_to='doctor')
     department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, related_name='employee_department')
     availability = models.ForeignKey(Schedule, on_delete=models.SET_NULL, null=True, related_name='doctor_schedule')
     experience = models.ForeignKey(Experience, on_delete=models.SET_NULL, blank=True, null=True,
                                    related_name='doctor_experience')
+    gender = models.CharField(choices=GenderEnum.choices(), default=GenderEnum.MALE.value, max_length=10)
+
+    def __str__(self):
+        return self.username.username
+
+
+class Patient(BaseEntity):
+    username = models.OneToOneField(User, on_delete=models.CASCADE, related_name='PatientProfile')
+    address = models.TimeField()
+    phone_number = models.IntegerField(default=0)
+    profile_photo = models.ImageField(upload_to='patient')
+    age = models.ImageField(0)
+    city = models.CharField(max_length=120, blank=True, null=True)
+    reference_name = models.CharField(max_length=70, blank=True, null=True)
+    reference_phone_number = models.ImageField(default=0)
     gender = models.CharField(choices=GenderEnum.choices(), default=GenderEnum.MALE.value, max_length=10)
 
     def __str__(self):
