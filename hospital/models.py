@@ -32,16 +32,16 @@ class Department(BaseEntity):
 
 
 class Doctor(BaseEntity):
-    username = models.OneToOneField(User,  on_delete=models.CASCADE, related_name='DoctorProfile')
+    username = models.OneToOneField(User, on_delete=models.CASCADE, related_name='DoctorProfile')
     specialist = models.CharField(max_length=100)
     location = models.CharField(max_length=120)
-    phone_number = models.IntegerField(max_length=14)
+    phone_number = models.IntegerField(default=0)
     education = models.TextField()
     visit_fee = models.IntegerField(default=0)
     designation = models.CharField(max_length=70)
-    department = models.ForeignKey(Department, on_delete=models.SET_NULL, related_name='employee_department')
-    availability = models.ForeignKey(Schedule, on_delete=models.SET_NULL, related_name='doctor_schedule')
-    experience = models.ForeignKey(Exception, on_delete=models.SET_NULL, blank=True, null=True,
+    department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, related_name='employee_department')
+    availability = models.ForeignKey(Schedule, on_delete=models.SET_NULL, null=True, related_name='doctor_schedule')
+    experience = models.ForeignKey(Experience, on_delete=models.SET_NULL, blank=True, null=True,
                                    related_name='doctor_experience')
     gender = models.CharField(choices=GenderEnum.choices(), default=GenderEnum.MALE.value, max_length=10)
 
