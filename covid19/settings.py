@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'contagion',
+    'hospital',
 
     # Third party app
     'rest_framework',
