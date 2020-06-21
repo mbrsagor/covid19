@@ -1,5 +1,5 @@
 # Covid-19 
-##### Basically the project for the COVID-19 situation helping peoples who will suffering the current situation.
+##### Simple hospital management app.
 ## Setup
 
 ### Dependancies
