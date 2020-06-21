@@ -14,7 +14,7 @@ class Experience(BaseEntity):
         return self.organization_name
 
 
-class Schedule(BaseEntity):
+class Availability(BaseEntity):
     day = models.CharField(max_length=50)
     time = models.TimeField(auto_now_add=False)
     date = models.DateField(auto_now_add=False)
@@ -37,11 +37,13 @@ class Doctor(BaseEntity):
     location = models.CharField(max_length=120)
     phone_number = models.IntegerField(default=0)
     education = models.TextField()
+    date_of_birth = models.DateTimeField(auto_now_add=False)
     visit_fee = models.IntegerField(default=0)
     designation = models.CharField(max_length=70)
     profile_photo = models.ImageField(upload_to='doctor')
     department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, related_name='employee_department')
-    availability = models.ForeignKey(Schedule, on_delete=models.SET_NULL, null=True, related_name='doctor_schedule')
+    availability = models.ForeignKey(Availability, on_delete=models.SET_NULL, null=True,
+                                     related_name='doctor_availability')
     experience = models.ForeignKey(Experience, on_delete=models.SET_NULL, blank=True, null=True,
                                    related_name='doctor_experience')
     gender = models.CharField(choices=GenderEnum.choices(), default=GenderEnum.MALE.value, max_length=10)
@@ -57,9 +59,23 @@ class Patient(BaseEntity):
     profile_photo = models.ImageField(upload_to='patient')
     age = models.ImageField(0)
     city = models.CharField(max_length=120, blank=True, null=True)
+    postal_code = models.IntegerField(default=0)
+    date_of_birth = models.DateTimeField(auto_now_add=False)
     reference_name = models.CharField(max_length=70, blank=True, null=True)
     reference_phone_number = models.ImageField(default=0)
     gender = models.CharField(choices=GenderEnum.choices(), default=GenderEnum.MALE.value, max_length=10)
 
     def __str__(self):
         return self.username.username
+
+
+class Schedule(BaseEntity):
+    doctor_name = models.ForeignKey(Doctor, on_delete=models.SET_NULL, null=True, related_name='doctor_schedule')
+    available_days = models.CharField(max_length=50)
+    start_time = models.TimeField(auto_now_add=False)
+    end_time = models.TimeField(auto_now_add=False)
+    message = models.TextField()
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.doctor_name.username
