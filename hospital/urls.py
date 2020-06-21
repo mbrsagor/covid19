@@ -1,1 +1,1 @@
-from .views import *from rest_framework import routersrouter = routers.DefaultRouter()router.register('experience', ExperienceViewSet)urlpatterns = router.urls
+from .views import *from rest_framework import routersrouter = routers.DefaultRouter()router.register('experience', ExperienceViewSet)router.register('availability', AvailabilityViewSet)urlpatterns = router.urls
