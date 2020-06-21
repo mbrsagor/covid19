@@ -14,3 +14,8 @@ class ExperienceViewSet(ModelViewSet):
 class AvailabilityViewSet(ModelViewSet):
     queryset = Availability.objects.all()
     serializer_class = AvailabilitySerializer
+
+
+class LaboratoriesViewSet(ModelViewSet):
+    queryset = Laboratories.objects.all()
+    serializer_class = LaboratoriesSerializer
