@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from contagion.helpers.enums import *
 from contagion.models import BaseEntity, Disease
+from .utils import Role
 
 
 # Create your models here.
@@ -23,6 +24,15 @@ class Availability(BaseEntity):
         return self.day
 
 
+class Laboratories(BaseEntity):
+    lab_name = models.CharField(max_length=120)
+    machinery_name = models.CharField(max_length=150, blank=True, null=True)
+    total_machinery = models.IntegerField(default=1)
+
+    def __str__(self):
+        return self.lab_name
+
+
 class Department(BaseEntity):
     department_name = models.CharField(max_length=80)
     employee_type = models.CharField(max_length=120)
@@ -31,15 +41,27 @@ class Department(BaseEntity):
         return self.employee_type
 
 
+class Service(BaseEntity):
+    service_name = models.CharField(max_length=100)
+    price = models.IntegerField(default=1)
+    discount_price = models.IntegerField(default=0)
+    laboratories = models.ForeignKey(Laboratories, on_delete=models.CASCADE, null=True, blank=True,
+                                     related_name='service_laboratories')
+
+    def __str__(self):
+        return self.service_name
+
+
 class Doctor(BaseEntity):
     username = models.OneToOneField(User, on_delete=models.CASCADE, related_name='DoctorProfile')
-    specialist = models.CharField(max_length=100)
+    specialization = models.CharField(max_length=100)
     location = models.CharField(max_length=120)
     phone_number = models.IntegerField(default=0)
     education = models.TextField()
     date_of_birth = models.DateTimeField(auto_now_add=False)
     visit_fee = models.IntegerField(default=0)
     designation = models.CharField(max_length=70)
+    roles = models.ManyToManyField(Role)
     profile_photo = models.ImageField(upload_to='doctor')
     department = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True, related_name='employee_department')
     availability = models.ForeignKey(Availability, on_delete=models.SET_NULL, null=True,
@@ -79,3 +101,31 @@ class Schedule(BaseEntity):
 
     def __str__(self):
         return self.doctor_name.username
+
+
+class Appointment(BaseEntity):
+    name = models.CharField(max_length=90)
+    Department_name = models.ForeignKey(Department, on_delete=models.SET_NULL, null=True,
+                                        related_name='doctor_appointment')
+
+    schedules = models.ForeignKey(Schedule, on_delete=models.SET_NULL, null=True, related_name='doctor_schedules')
+    phn_number = models.IntegerField(default=0)
+    email = models.EmailField(blank=True, null=True)
+    problem = models.TextField(blank=True, null=True)
+    address = models.TextField()
+
+    def __str__(self):
+        return self.name
+
+
+class Test(BaseEntity):
+    test_name = models.CharField(max_length=120)
+    patient = models.ForeignKey(Patient, on_delete=models.CASCADE, null=True, blank=True,
+                                related_name='test_patient_name')
+    patient_name = models.CharField(max_length=70, blank=True, null=True)
+    address = models.CharField(max_length=70, blank=True, null=True)
+    phone_number = models.IntegerField(default=0)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='test_service')
+
+    def __str__(self):
+        return self.test_name
