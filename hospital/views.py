@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from .models import *
+from .serializers import *
 
-# Create your views here.
+from rest_framework.viewsets import ModelViewSet
+
+
+class ExperienceViewSet(ModelViewSet):
+    queryset = Experience.objects.all()
+    serializer_class = ExperienceSerializer
