@@ -19,3 +19,13 @@ class AvailabilityViewSet(ModelViewSet):
 class LaboratoriesViewSet(ModelViewSet):
     queryset = Laboratories.objects.all()
     serializer_class = LaboratoriesSerializer
+
+
+class DepartmentViewSet(ModelViewSet):
+    queryset = Department.objects.all()
+    serializer_class = DepartmentSerializer
+
+
+class ServiceViewSet(ModelViewSet):
+    queryset = Service.objects.all()
+    serializer_class = ServiceSerializer
