@@ -17,8 +17,8 @@ class Experience(BaseEntity):
 
 class Availability(BaseEntity):
     day = models.CharField(max_length=50)
-    time = models.CharField(max_length=70)
-    date = models.CharField(max_length=70)
+    time = models.TimeField(auto_now_add=False)
+    date = models.DateField(auto_now_add=False)
 
     def __str__(self):
         return self.day
