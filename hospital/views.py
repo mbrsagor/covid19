@@ -8,7 +8,7 @@ from rest_framework.permissions import IsAdminUser
 class ExperienceViewSet(ModelViewSet):
     queryset = Experience.objects.all()
     serializer_class = ExperienceSerializer
-    permission_classes = [IsAdminUser]
+    # permission_classes = [IsAdminUser]
 
 
 class AvailabilityViewSet(ModelViewSet):
