@@ -1,5 +1,4 @@
 from .models import *
-from django.contrib.auth.models import User
 from .serializers import *
 
 from django.shortcuts import get_object_or_404
@@ -8,7 +7,6 @@ from rest_framework.response import Response
 from rest_framework.status import HTTP_201_CREATED, HTTP_200_OK, HTTP_204_NO_CONTENT, HTTP_400_BAD_REQUEST
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.pagination import PageNumberPagination
-from rest_framework.permissions import IsAuthenticated
 
 
 class StandardResultsSetPagination(PageNumberPagination):
@@ -106,16 +104,3 @@ class HospitalViewSet(ModelViewSet):
     serializer_class = HospitalSerializer
     pagination_class = StandardResultsSetPagination
 
-
-class ProfileApiView(APIView):
-    permission_classes = [IsAuthenticated]
-
-    def get(self, request):
-        try:
-            queyset = Profile.objects.get(id=self.request.user.id)
-            serializer = ProfileSerializer(queyset)
-            return Response(serializer.data, status=HTTP_200_OK)
-        except Exception as e:
-            queyset = User.objects.get(id=self.request.user.id)
-            serializer = UserSerializer(queyset)
-            return Response(serializer.data, status=HTTP_200_OK)

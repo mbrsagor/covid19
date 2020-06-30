@@ -12,6 +12,5 @@ urlpatterns = [
     path('api/location/<int:id>/', LocationUpdateDeleteView.as_view(), name='country-update'),
     path('api/contagion/', ContagionApiView.as_view(), name='Contagion'),
     path('api/contagion/<int:id>/', ContagionUpdateDeleteView.as_view(), name='Contagion-update'),
-    path('api/user/profile', ProfileApiView.as_view(), name="profile"),
     path('api/', include(router.urls)),
 ]

@@ -1,1 +1,1 @@
-from .views import *from rest_framework import routersrouter = routers.DefaultRouter()router.register('role', RoleViewSet)urlpatterns = router.urls
+from .views import *from django.urls import path, includefrom rest_framework import routersrouter = routers.DefaultRouter()router.register('role', RoleViewSet)urlpatterns = [    path('', include(router.urls)),    path('profile', ProfileAPIIView.as_view(), name='profile')]
