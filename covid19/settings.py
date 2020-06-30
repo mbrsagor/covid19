@@ -38,6 +38,7 @@ INSTALLED_APPS = [
 
     'contagion',
     'hospital',
+    'user',
 
     # Third party app
     'rest_framework',

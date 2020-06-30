@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from contagion.helpers.enums import *
 from contagion.models import BaseEntity, Disease
-from .utils import Role
+from user.models import Role
 
 
 # Create your models here.
