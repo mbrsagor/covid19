@@ -1,7 +1,9 @@
 from .models import *
 from .serializers import *
 from .permissions import *
+from user.serializers import UserSerializer
 
+from django.contrib.auth.models import User
 from rest_framework.viewsets import ModelViewSet
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
@@ -38,4 +40,11 @@ class DoctorAPIView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        pass
+        try:
+            queryset = Doctor.objects.get(id=self.request.user.id)
+            serializer = DoctorSerializer(queryset)
+            return Response(serializer.data, status=HTTP_200_OK)
+        except Exception as e:
+            queryset = User.objects.get(id=self.request.user.id)
+            serializer = UserSerializer(queryset)
+            return Response(serializer.data, status=HTTP_200_OK)
