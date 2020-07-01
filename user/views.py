@@ -36,3 +36,11 @@ class ProfileAPIIView(APIView):
             queryset = User.objects.get(id=self.request.user.id)
             serializer = UserSerializer(queryset)
             return Response(serializer.data, status=HTTP_200_OK)
+
+
+class UserModelViewSet(ModelViewSet, PermissionHelperMixin):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+
+    def get_permissions(self):
+        return self.admin_editable_only()
