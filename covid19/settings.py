@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Custom app
     'core',
     'hospital',
     'user',
@@ -63,9 +64,6 @@ MIDDLEWARE = [
 
 # REST FRAMEWORK SETTINGS
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': (
-        'drf_role.permissions.BaseRolePermission',
-    ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
@@ -153,9 +151,9 @@ CORS_ORIGIN_WHITELIST = [
     'http://localhost:8000'
 ]
 
-# Mail using SMTP
+# EMAIL SETTINGS
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'sagor@gmail.com'
-EMAIL_HOST_PASSWORD = 'sagor123'
+EMAIL_HOST_USER = 'your_mail@gmail.com'
+EMAIL_HOST_PASSWORD = 'password123'
 EMAIL_PORT = 587
