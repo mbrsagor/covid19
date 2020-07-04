@@ -1,0 +1,1 @@
+from core.models.base import BaseEntityfrom core.models.contagion import *__author = 'Sagor'__all__ = [    'Location',    'Disease',    'Contagion',    'Hospital',    'Help',    'BaseEntity']

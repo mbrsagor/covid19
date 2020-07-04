@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import *
+from hospital.models.management import *
 
 
 class ExperienceAdmin(admin.ModelAdmin):

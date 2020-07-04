@@ -1,0 +1,1 @@
+from hospital.models.doctor import Doctorfrom rest_framework.serializers import ModelSerializer, SerializerMethodFieldclass DoctorSerializer(ModelSerializer):    roles = SerializerMethodField()    class Meta:        model = Doctor        fields = {            '__all__'        }        read_only_fields = ['roles']
