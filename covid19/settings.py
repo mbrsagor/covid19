@@ -63,6 +63,7 @@ MIDDLEWARE = [
 ]
 
 # REST FRAMEWORK SETTINGS
+"""
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
@@ -71,6 +72,7 @@ REST_FRAMEWORK = {
         'rest_framework.renderers.JSONRenderer',
     )
 }
+"""
 
 ROOT_URLCONF = 'covid19.urls'
 

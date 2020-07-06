@@ -1,0 +1,1 @@
+from hospital.models import Doctorfrom hospital.serializers.doctor_serializers import DoctorSerializerfrom rest_framework.viewsets import ModelViewSetclass DoctorViewSet(ModelViewSet):    queryset = Doctor.objects.all()    serializer_class = DoctorSerializer
