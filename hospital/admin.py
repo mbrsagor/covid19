@@ -20,14 +20,14 @@ admin.site.register(Experience, ExperienceAdmin)
 
 class AvailabilityAdmin(admin.ModelAdmin):
     list_display = (
-        'id', 'day', 'time', 'date',
+        'id', 'day', 'start_time', 'end_time',
         'created_at', 'updated_at'
     )
 
-    search_fields = ['day', 'time', 'day']
+    search_fields = ['day', 'start_time', 'end_time']
     list_display_links = ['day']
-    list_filter = ['day', 'time', 'date']
-    list_editable = ['date', 'time']
+    list_filter = ['day', 'start_time', 'end_time']
+    list_editable = ['start_time', 'end_time']
 
     list_per_page = 6
 
