@@ -1,5 +1,6 @@
 from django.contrib import admin
 from hospital.models.management import *
+from hospital.models.doctor import Doctor
 
 
 class ExperienceAdmin(admin.ModelAdmin):
@@ -81,3 +82,17 @@ class ServiceAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Service, ServiceAdmin)
+
+
+class DoctorAdmin(admin.ModelAdmin):
+    list_display = [
+        'user', 'specialization', 'address', 'phone_number', 'education',
+        'date_of_birth', 'visit_fee', 'designation', 'roles', 'department',
+        'availability', 'experience', 'gender', 'created_at', 'updated_at'
+    ]
+
+    list_editable = ['phone_number', 'visit_fee']
+    list_per_page = 6
+
+
+admin.site.register(Doctor, DoctorAdmin)
