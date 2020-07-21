@@ -47,7 +47,7 @@ virtualenv venv --python=python3.6
 Activate it:
 
 ```bash/zsh
-source env/bin/activate
+source venv/bin/activate
 ```
 
 Install the python dependancies which includes django and other libraries.
