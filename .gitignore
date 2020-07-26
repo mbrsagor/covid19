@@ -7,3 +7,5 @@ media
 venv
 media
 static
+
+config/db_config.py
