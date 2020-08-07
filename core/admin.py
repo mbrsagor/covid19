@@ -21,6 +21,11 @@ admin.site.register(Location, LocationAdmin)
 
 class DiseaseAdmin(admin.ModelAdmin):
     list_display = ('id', 'disease_name', 'created_at', 'updated_at')
+    # list_display_links = ['disease_name']
+    search_fields = ['disease_name']
+    list_per_page = 6
+    list_filter = ['disease_name', 'created_at', 'updated_at']
+    list_editable = ['disease_name']
 
 
 admin.site.register(Disease, DiseaseAdmin)
