@@ -56,5 +56,6 @@ Install the python dependancies which includes django and other libraries.
 pip install -r requirements.txt
 
 python3 manage.py runserver # or
+./manage.py createsuperuser
 ./manage.py runserver
 ```
