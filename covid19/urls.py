@@ -4,12 +4,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from rest_framework_simplejwt import views as jwt_views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('api/', include('hospital.urls')),
     path('api/user/', include('user.urls')),
-    path('rest-auth/', include('rest_auth.urls')),
+    path('api/login/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('api/accounts/', include('rest_registration.api.urls')),
 
 ]

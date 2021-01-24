@@ -6,7 +6,7 @@
 
 - Python 3.6.9 
 - Django 3.0
-- Mysql 8.0.19
+- PostgreSQL 12.3
 
 The following steps will walk you thru installation on a Mac. Linux should be similar.
 It's also possible to develop on a Windows machine, but I have not documented the steps.
@@ -24,7 +24,7 @@ $ sudo apt-get install mysql-<mysql-version>-mysql-<mysql-version> # example Mys
 
 Create the database by running the following commands in a mysql shell.
 First after installation mysql you may the command: example
-mysql -u root -p1234
+`psql postgres` then your DB password if need.
 
 ```
 create database "covid19";
