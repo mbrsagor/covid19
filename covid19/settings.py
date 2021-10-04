@@ -17,26 +17,31 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+DEFAULT_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+]
 
-    # Custom app
+# Project APPS
+PROJECT_APPS = [
     'core',
     'hospital',
     'user',
+]
 
-    # Third party app
+# libraries APPS
+LIBRARY_APPS = [
     'rest_framework',
     'corsheaders',
     'rest_framework.authtoken',
     'rest_registration',
-
 ]
+
+INSTALLED_APPS = DEFAULT_APPS + PROJECT_APPS + LIBRARY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
