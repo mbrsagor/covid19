@@ -7,5 +7,5 @@ media
 venv
 media
 static
-
+.env
 config/db_config.py
