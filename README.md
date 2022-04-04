@@ -1,8 +1,8 @@
 # Covid-19 
-##### Simple hospital management app.
-## Setup
+> Simple hospital management app.
+## Setup::
 
-### Dependancies
+### Dependencies
 
 - Python 3.6.9 
 - Django 3.0
@@ -12,13 +12,6 @@ The following steps will walk you thru installation on a Mac. Linux should be si
 It's also possible to develop on a Windows machine, but I have not documented the steps.
 If you've developed django apps on Windows, you should have little problem getting
 up and running.
-
-
-On Debian/Ubuntu Linux
-```
-$ sudo apt-get install binutils libproj-dev gdal-bin
-$ sudo apt-get install mysql-<mysql-version>-mysql-<mysql-version> # example Mysql 8.0.19
-```
 
 ### Create Database
 
@@ -50,7 +43,15 @@ Activate it:
 source venv/bin/activate
 ```
 
-Install the python dependancies which includes django and other libraries.
+###### Then copy code from the ``.sample_env`` and create new file `.env` then pasts
+
+-------------------------------------------
+```bash
+|--> .sample_env
+|--> .env
+```
+
+###### Install the python dependencies which includes django and other libraries.
 
 ```
 pip install -r requirements.txt

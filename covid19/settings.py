@@ -4,7 +4,6 @@ import environ
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 env = environ.Env(
     DEBUG=(bool, False),
     ALLOWED_HOSTS=(list),
@@ -22,10 +21,7 @@ env("SECRET_KEY")
 DEBUG = env("DEBUG")
 ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
-ALLOWED_HOSTS = []
-
 # Application definition
-
 DEFAULT_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -159,7 +155,7 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.AllowAny',
     ),
-    'DATETIME_FORMAT': '%Y-%m-%d %I:%M %p ',
+    'DATETIME_FORMAT': '%Y-%m-%d %I:%M %p',
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
     'PAGINATE_BY_PARAM': 'page_size'
