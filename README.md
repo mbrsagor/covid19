@@ -8,16 +8,16 @@
 - Django 3.0
 - PostgreSQL 12.3
 
-The following steps will walk you thru installation on a Mac. Linux should be similar.
+The following steps will walk you through installation on a Mac. Linux should be similar.
 It's also possible to develop on a Windows machine, but I have not documented the steps.
-If you've developed django apps on Windows, you should have little problem getting
+If you've developed Django apps on Windows, you should have little problem getting
 up and running.
 
 ### Create Database
 
 Create the database by running the following commands in a mysql shell.
-First after installation mysql you may the command: example
-`psql postgres` then your DB password if need.
+First after installing MySQL, you may use the command: example
+`psql postgres` then your DB password if needed.
 
 ```
 create database "covid19";
@@ -31,7 +31,7 @@ brew install python3
 ```
 Assuming you've cloned the repository, open Terminal and `cd ~/your/path/to/coivd19`.
 
-Create a python virtual environment:
+Create a Python virtual environment:
 
 ```bash/zsh
 virtualenv venv --python=python3.6
@@ -43,7 +43,7 @@ Activate it:
 source venv/bin/activate
 ```
 
-###### Then copy code from the ``.sample_env`` and create new file `.env` then pasts
+###### Then copy code from the ``.sample_env`` and create a new file `.env` then pasts
 
 -------------------------------------------
 ```bash
@@ -51,7 +51,7 @@ source venv/bin/activate
 |--> .env
 ```
 
-###### Install the python dependencies which includes django and other libraries.
+###### Install the Python dependencies which include Django and other libraries.
 
 ```
 pip install -r requirements.txt
